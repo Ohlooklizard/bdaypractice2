@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Interactive Photo Grid</title>
+  <title>Test Chamber 1</title>
   <style>
     body {
+            text-align: Left;
+            font-family: Arial;
+            background-color: #111;
+            color: #fff;
+            margin-top: 100px;
+			
+			        /* Background image */
+			background-image: src = (hall2.jpg");
+			background-size: cover;       /* Cover entire page */
+			background-position: center;  /* Center the image */
+			background-repeat: no-repeat; /* Don't repeat the image */
+			height: 100vh;                /* Full viewport height */
+        }
+        h1, p, form {
+            opacity: 0;
+            transition: opacity 2s ease-in;
+        }
+        input {
+            padding: 10px;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px;
+            font-size: 1em;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+      
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
@@ -79,6 +108,8 @@
     }
   </style>
 </head>
+  <title>Test Chamber 1</title>
+  <
 <body>
 
 <div class="grid-container">
@@ -218,6 +249,28 @@
     });
   });
 </script>
-
+  <div style="background-color: rgba(0,0,0,0.5); 
+    position: absolute; 
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:100%; 
+    z-index:-1;"></div>
+  
+<p id="message" style="opacity: 1;">
+  "What's the hidden number?"
+  
+	</p>
+  <form method="POST" action="/num" id="form" style="opacity: 1;">
+        <input type="text" name="user_input" placeholder="???" required="">
+        <button type="submit">Submit</button>
+    </form> == $0
+  <audio id= "hauntmusic" loop>
+    <source src="/hauntmusic.mp3" 
+      Type= "audio/mpeg">
+    
+  
 </body>
+    
+  
 </html>
