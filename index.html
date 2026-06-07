@@ -128,10 +128,47 @@
     .btn:hover {
       background: rgba(0, 0, 0, 0.9);
     }
+
+	  </p>
+  <form id="codeForm" onsubmit="checkCode(event)">
+  <label for="codeInput">Enter Code:</label>
+  <input type="text" id="codeInput" placeholder="What's the hidden number?" required>
+  <button type="submit">Submit</button>
+</form>
+	  <audio id="wrongAudio" src="nottoworry.mp3"></audio>
+
+		 <img id="gmanImage" src="gman.jpg" alt="G-Man" class="fade-image">
+
+	  <style>
+  #codeForm {
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 20px;
+  }
+
+  /* Positions image halfway down the page, 20px from the left edge */
+  .fade-image {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    opacity: 0;
+    pointer-events: none; 
+    transition: opacity 0.5s ease-in-out; /* Controls the fade speed */
+  }
+
+  /* Utility class to trigger the fade-in effect */
+  .fade-image.show {
+    opacity: 1;
+  }
+</style>
+	
   </style>
 </head>
   <title>Test Chamber 1</title>
-  <
+	  
 <body>
 
 <div class="grid-container">
@@ -271,6 +308,37 @@
     });
   });
 
+	<script>
+  function checkCode(event) {
+    // Prevent the page from automatically refreshing on submit
+    event.preventDefault(); 
+    
+    const userInput = document.getElementById('codeInput').value;
+    const audio = document.getElementById('wrongAudio');
+    const image = document.getElementById('gmanImage');
+    
+    if (userInput === "197") {
+      window.location.href = "https://ohlooklizard.github.io/testchamber2/"; 
+    } else {
+      // FAILURE: Play audio
+      audio.currentTime = 0; 
+      audio.play().catch(error => console.log("Audio playback requires user interaction first:", error));
+      
+      // FAILURE: Fade in image
+      image.classList.add('show');
+      
+      // Wait 3 seconds (3000ms), then fade out image
+      setTimeout(() => {
+        image.classList.remove('show');
+      }, 3000);
+      
+      // Optional: Clear the input box for the user to try again
+      document.getElementById('codeInput').value = '';
+    }
+  }
+</script>
+
+	
 	<body>
   <!-- Bucket audio -->
   <audio id="bucket-audio" src="thisisabucket.mp3"></audio>
@@ -323,19 +391,10 @@
     }
 	
   <div
-<p id="message" style="opacity: 1;">
-  "What's the hidden number?"
-  
-	</p>
-  <form method="POST" action="/num" id="form" style="opacity: 1;">
-        <input type="text" name="user_input" placeholder="???" required="197">
-        <button type="submit">Submit</button>
-    </form> 
-  <audio id= "peaceful music" loop>
-    <source src="/peaceful.mp3" 
-      Type= "audio/mpeg">
-    
-  
+
+	
+	  
+	  
 </body>
     
   
