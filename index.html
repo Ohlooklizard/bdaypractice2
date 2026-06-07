@@ -17,7 +17,29 @@
 			background-position: center;  /* Center the image */
 			background-repeat: no-repeat; /* Don't repeat the image */
 			height: 100vh;                /* Full viewport height */
-        }
+
+		
+    .top-right-button {
+      position: absolute;
+      top: 150px;
+      right: 30px;
+      cursor: pointer;
+      width: 80px;
+      height: 80px;
+    }
+
+    .bottom-right-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 100px;
+      height: auto;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+	
+	}
         h1, p, form {
             opacity: 0;
             transition: opacity 2s ease-in;
@@ -248,15 +270,59 @@
       }
     });
   });
+
+	<body>
+  <!-- Bucket audio -->
+  <audio id="bucket-audio" src="thisisabucket.mp3"></audio>
+ 
+		<!-- Bunny audio -->
+<audio id="Bunny-audio" src="bunnyblah.mp4"></audio>
+
+	  <!-- Top-right Bucket button -->
+  <img 
+    id="bucket-button"
+    src="bucket.jpg"
+    alt="Bucket Button"
+    class="top-right-button"
+    onclick="toggleBucket()"
+  />
+
+  <!-- Bottom-right Bunny button -->
+  <img 
+    id="bunny-button"
+    src="bunny.jpg"
+    alt="bunny button"
+    class="bottom-right-button"
+    onclick="togglebunny()"
+  />
+		
 </script>
-  <div style="background-color: rgba(0,0,0,0.5); 
-    position: absolute; 
-    top:0; 
-    left:0; 
-    width:100%; 
-    height:100%; 
-    z-index:-1;"></div>
-  
+	 < Bucket toggle
+    let isBucketHat = false;
+    function toggleBucket() {
+      const img = document.getElementById("bucket-button");
+	<const audio = document.getElementById("bucket-audio");
+
+  <    img.src = isBucketHat ? "bucket.jpg" : "buckethat.jpg";
+  <    isBucketHat = !isBucketHat;
+
+     < audio.currentTime = 0;
+     < audio.play();
+    }
+		  // Bunny toggle
+   < let playFirstBunny = true;
+    function toggleBunnyvideo() {
+      const img = document.getElementById("bunny button");
+	   < const audio = document.getElementById("bunny-video");
+		   
+  <    img.src = isbunnybleh ? "bunny.jpg" : "bunnybleh.mp4";
+  <    isbunnybleh = !isbunnybleh;
+
+     < audio.currentTime = 0;
+     < audio.play();
+    }
+	
+  <div
 <p id="message" style="opacity: 1;">
   "What's the hidden number?"
   
@@ -264,9 +330,9 @@
   <form method="POST" action="/num" id="form" style="opacity: 1;">
         <input type="text" name="user_input" placeholder="???" required="197">
         <button type="submit">Submit</button>
-    </form> == $0
-  <audio id= "hauntmusic" loop>
-    <source src="/hauntmusic.mp3" 
+    </form> 
+  <audio id= "peaceful music" loop>
+    <source src="/peaceful.mp3" 
       Type= "audio/mpeg">
     
   
